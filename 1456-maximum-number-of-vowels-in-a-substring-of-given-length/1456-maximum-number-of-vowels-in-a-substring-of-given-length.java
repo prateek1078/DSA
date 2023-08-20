@@ -3,12 +3,17 @@ class Solution {
         
         int vowelCount=0;
         int maxCount=0;
+        char[] c = {'a', 'e', 'i', 'o' ,'u'};
         
-
+        Set<Character> vowels = new HashSet();
+        for(char vowel : c)
+        {
+        vowels.add(vowel);
+        }
         
         for( int i = 0 ; i<k ;i++)
         {
-            if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u')
+            if(vowels.contains(s.charAt(i)))
                {
                 vowelCount++;
                }
@@ -20,12 +25,12 @@ class Solution {
          for( int i= k ; i< s.length(); i++)
          {
              
-            if (s.charAt(i-k) == 'a' || s.charAt(i-k) == 'e' || s.charAt(i-k) == 'i' || s.charAt(i-k) == 'o' || s.charAt(i-k) == 'u')
+             if(vowels.contains(s.charAt(i-k)))
              {
                  vowelCount--;
              }
             
-             if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || s.charAt(i) == 'i' || s.charAt(i) == 'o' || s.charAt(i) == 'u')
+             if(vowels.contains(s.charAt(i)))
              {
                  vowelCount++;
              }
