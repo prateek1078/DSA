@@ -16,7 +16,12 @@ public class Solution extends GuessGame {
         
        while ( left<=n)
        {
-           int mid = left + (right - left)/2;
+           
+           //we did not use mid=(left+right)/2 to avoid integer overflow
+           //if both are big intger values it will lead integer overflow
+           int mid = left + (right - left)/2; 
+           
+           
            int g = guess(mid);
            
            if (g==0) 
