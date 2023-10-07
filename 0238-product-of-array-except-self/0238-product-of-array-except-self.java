@@ -8,20 +8,23 @@ class Solution {
             result[i] = 1;
         }
         
-        int leftProduct = 1;
-        int rightProduct = 1;
+        int product = 1;
         
-        // Calculate the product to the left of each element and store it in the result array.
-        for (int i = 0; i < n; i++) {
-            result[i] *= leftProduct;
-            leftProduct *= nums[i];
+        for( int i =0 ; i<n ;i++){
+            
+            product *= nums[i];
+            result[i] = product;
+            
         }
         
-        // Calculate the product to the right of each element and multiply it with the result array.
-        for (int i = n - 1; i >= 0; i--) {
-            result[i] *= rightProduct;
-            rightProduct *= nums[i];
+        product =1;
+        
+        for (int i = n-1; i>0; i--){
+            result[i] = result[i-1]*product;
+            product*= nums[i];
         }
+        
+        result[0] = product; 
         
         return result;
     }
