@@ -3,10 +3,7 @@ class Solution {
         int n = nums.length;
         int[] result = new int[n];
         
-        // set all values 1 in result array
-        for (int i = 0; i < n; i++) {
-            result[i] = 1;
-        }
+      
         
         int product = 1;
         
